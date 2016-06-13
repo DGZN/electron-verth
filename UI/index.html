@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>VERTHERON DASHBOARD</title>
+  </head>
+  <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+  <link rel="stylesheet" href="/semantic/dist/semantic.min.css" />
+  <script src="/semantic/dist/semantic.min.js"></script>
+  <style>
+  html {
+  height: 100%;
+  overflow: scroll;
+  overflow-x: hidden;
+  }
+  ::-webkit-scrollbar {
+      width: 0px;  /* remove scrollbar space */
+      background: transparent;  /* optional: just make scrollbar invisible */
+  }
+  /* optional: show position indicator in red */
+  ::-webkit-scrollbar-thumb {
+    background: transparent;  /* optional: just make scrollbar invisible */
+  }
+  body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: table;
+    font-family: 'Lato';
+    overflow: hidden;
+  }
+
+  #root {
+    height: 100%;
+    width: 100%;
+    background-image: url('./images/kali-linux-wallpaper_654878115.gif') !important;
+    /*background-color: rgba(0,0,0,.9);*/
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .trace-image {
+    position: absolute;
+    bottom: 100px;
+    right: 50px;
+    width: 600px;
+    border-radius: 25px;
+    border: 1px solid black;
+    height: auto;
+  }
+
+  #hosts {
+    position: absolute;
+    display: block;
+    height: 100%;
+    width: 100%;
+    padding-top: 0.5rem;
+    background-color: #2B2B2B;
+  }
+
+   .ui.cards>.card {
+    position: relative;
+    vertical-align: bottom;
+    background-color: rgba(222,27,27,.8) !important;
+    border: 0px !important;
+    box-shadow: 0px 0px 0px 0;
+  }
+
+  .host-details.segment, .host-details .ui.tab {
+    display: block;
+    background-color: rgba(122,122,122,0);
+    height: 96.5% !important;
+  }
+
+  .ui.inverted.host-details.segment {
+    background: rgba(27,28,29,.6);
+  }
+
+  .keylogs.table tbody {
+    font-size: 0.7em;
+    font-weight: 100;
+    color: #118C4E;
+  }
+
+  .keylogs.table .header {
+    font-size: 1em;
+    font-weight: 400;
+    color: #118C4E;
+  }
+
+  .keylogs.table tbody tr td:nth-child(2) {
+    color: rgba(222,27,27,.8);
+  }
+
+  .proxy.table tbody {
+    cursor: pointer;
+    opacity: 0.6;
+    background: rgba(0,0,0,0);
+    font-size: 0.8em;
+    font-weight: 100;
+  }
+
+  .proxy.table tbody tr td:nth-child(1) {
+    color: #118C4E !important;
+  }
+
+  .proxy.table tbody tr td:nth-child(2) {
+    color: #6DBDD6 !important;
+  }
+
+  .proxy.table tbody tr td:nth-child(3) {
+    color: #DE1B1B !important;
+  }
+
+  .proxy.table tbody tr td:nth-child(4) {
+    font-weight: bold;
+    color: #118C4E !important;
+  }
+
+  </style>
+  <body>
+  <div class="ui right wide sidebar">
+    <div id="hosts">
+      <div class="ui one link cards">
+        <div class="ui card">
+          <div class="content">
+            <div class="meta">
+              <h5 class="ui header">Apple</h5>
+              <a class="group">10.0.1.6</a>
+              <a class="right floated created">2c:f0:ee:14:96:e0</a>
+            </div>
+          </div>
+          <div class="extra content">
+            <a class="right floated created">HIJACK</a>
+            <a class="friends">SCAN</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="root" class="dimmer pusher">
+    <div class="ui inverted secondary pointing icon menu">
+      <a class="left floated active item">
+        <h6 class="ui red header">
+          Apple
+        </h6>
+      </a>
+      <a class="item">
+        <i class="options large icon"></i>
+      </a>
+      <a class="item">
+        <i class="red spy large icon" onclick="toggleHostSidebar()"></i>
+      </a>
+    </div>
+    <div class="ui fluid inverted container host-details segment">
+      <div class="ui active tab segment">
+        <div class="ui two column very relaxed grid">
+          <div class="twelve wide column">
+            <table class="ui black inverted selectable proxy very padded table">
+              <tbody>
+                <tr>
+                  <td>GET</td>
+                  <td>ampas.giantdev.com</td>
+                  <td>10.0.1.8</td>
+                  <td class="right aligned green text">200</td>
+                </tr>
+                <tr>
+                  <td>GET</td>
+                  <td>ampas.giantdev.com</td>
+                  <td>10.0.1.8</td>
+                  <td class="right aligned green text">200</td>
+                </tr>
+                <tr>
+                  <td>GET</td>
+                  <td>ampas.giantdev.com</td>
+                  <td>10.0.1.8</td>
+                  <td class="right aligned green text">200</td>
+                </tr>
+                <tr>
+                  <td>GET</td>
+                  <td>ampas.giantdev.com</td>
+                  <td>10.0.1.8</td>
+                  <td class="right aligned green text">200</td>
+                </tr>
+                <tr>
+                  <td>GET</td>
+                  <td>ampas.giantdev.com</td>
+                  <td>10.0.1.8</td>
+                  <td class="right aligned green text">200</td>
+                </tr>
+                <tr>
+                  <td>GET</td>
+                  <td>ampas.giantdev.com</td>
+                  <td>10.0.1.8</td>
+                  <td class="right aligned green text">200</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="ui vertical divider"></div>
+          <div class="four wide column">
+            <table class="ui inverted black selectable right aligned keylogs padded table">
+              <thead>
+                <tr>
+                  <th colspan="4" class="left aligned">
+                    <h5 class="ui header">
+                      amaps.giantdev.com
+                    </h5>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="left aligned">USERNAME</td>
+                  <td>Keiichi</td>
+                </tr>
+                <tr>
+                  <td class="left aligned">PASSWORD</td>
+                  <td>123123123</td>
+                </tr>
+                <tr>
+                  <td class="left aligned">BOA_ID</td>
+                  <td>my_BOA-ID</td>
+                </tr>
+                <tr>
+                  <td class="left aligned">BOA_Password</td>
+                  <td>my-hidden-password</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <script>
+  $(() => {
+
+  })
+
+  const toggleHostSidebar = () => {
+    $('.sidebar')
+      .sidebar('setting', 'transition', 'push')
+      .sidebar('toggle')
+    ;
+  }
+  </script>
+</html>

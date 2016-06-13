@@ -1,0 +1,9 @@
+.targets {
+  position: absolute;
+  top: 2px;
+  right: 5px;
+  color: #930004;
+  opacity: 0.56;
+  cursor: pointer;
+  z-index: 999999;
+}

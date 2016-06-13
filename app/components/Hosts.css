@@ -1,0 +1,41 @@
+.hostsTab {
+  display: none;
+  position: absolute;
+  top: 2rem;
+  right: 3.5rem;
+  background: rgba(0,0,0,1);
+  border-radius: 15px;
+}
+
+.hostsTab li {
+  position: relative;
+  margin: 0.5 rem;
+  line-height: 1.5rem;
+}
+
+.hostsTab li:hover {
+  background-color: rgba(64,64,64,.8);
+  cursor: pointer;
+}
+
+.ip {
+  position: relative;
+  float: left;
+  width: 7rem;
+  margin-left: 0.3rem;
+  color: #930004;
+}
+
+.mac {
+  position: relative;
+  float: left;
+  width: 10rem;
+  position: relative;
+  color: #1cd731;
+}
+
+.vendor {
+  position: relative;
+  margin-left: 0.3rem;
+  color: #1cd731;
+}

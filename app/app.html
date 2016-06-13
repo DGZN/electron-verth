@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>::VERTHERON::</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="../semantic/dist/semantic.min.css" />
+    <style>
+    html {
+    height: 100%;
+    overflow: scroll;
+    overflow-x: hidden;
+    }
+    ::-webkit-scrollbar {
+        width: 0px;  /* remove scrollbar space */
+        background: transparent;  /* optional: just make scrollbar invisible */
+    }
+    /* optional: show position indicator in red */
+    ::-webkit-scrollbar-thumb {
+      background: transparent;  /* optional: just make scrollbar invisible */
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      display: table;
+      font-family: 'Lato';
+      overflow: scroll;
+    }
+
+    #root {
+      height: 100%;
+      width: 100%;
+    }
+
+    .wrapper {
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    #dashboard {
+      height: 100%;
+      width: 100%;
+      background-image: url('./images/kali-linux-wallpaper_654878115.gif') !important;
+      /*background-color: rgba(0,0,0,.9);*/
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    table tr {
+      cursor: pointer;
+    }
+
+    .trace-image {
+      position: absolute;
+      bottom: 100px;
+      right: 50px;
+      width: 600px;
+      border-radius: 25px;
+      border: 1px solid black;
+      height: auto;
+    }
+
+    #hosts {
+      position: absolute;
+      display: block;
+      height: 100%;
+      width: 100%;
+      padding-top: 0.5rem;
+      background-color: #2B2B2B;
+    }
+
+     .ui.cards>.card {
+      position: relative;
+      vertical-align: bottom;
+      background-color: rgba(222,27,27,.8) !important;
+      border: 0px !important;
+      box-shadow: 0px 0px 0px 0;
+    }
+
+    .host-details.segment, .host-details .ui.tab {
+      display: block;
+      background-color: rgba(122,122,122,0);
+      height: 95.5% !important;
+      overflow: scroll;
+    }
+
+    .ui.inverted.host-details.segment {
+      background: rgba(27,28,29,.6);
+      box-shadow: 0px !important;
+      /*background: rgba(0, 0, 0, 0);*/
+    }
+
+    .keylogs.table tbody {
+      font-size: 0.9em;
+      font-weight: 100;
+      color: #6DBDD6 !important;
+    }
+
+    .keylogs.table .header {
+      color: #118C4E;
+    }
+
+    .keylogs.table tbody tr td:nth-child(2) {
+      color: rgba(222,27,27,.8);
+      font-size: 1em;
+      font-weight: 400;
+    }
+
+    .traces.column {
+      height: 100%;
+      overflow: scroll;
+      border-bottom-left-radius: 25px;
+      border-bottom-right-radius: 25px;
+    }
+
+    .proxy.table tbody {
+      cursor: pointer;
+      opacity: 0.6;
+      background: rgba(0,0,0,0);
+      font-size: 0.8em;
+      font-weight: 100;
+    }
+
+    .proxy.table tbody tr td:nth-child(1) {
+      color: #118C4E !important;
+    }
+
+    .proxy.table tbody tr td:nth-child(2) {
+      color: #6DBDD6 !important;
+    }
+
+    .proxy.table tbody tr td:nth-child(3) {
+      color: #DE1B1B !important;
+    }
+
+    .proxy.table tbody tr td:nth-child(4) {
+      font-weight: bold;
+      color: #118C4E !important;
+    }
+
+
+    </style>
+    <script>
+      (function() {
+        if (!process.env.HOT) {
+          const link = document.createElement('link');
+          link.rel = 'stylesheet';
+          link.href = '../dist/style.css';
+          document.write(link.outerHTML);
+        }
+      }());
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+    (function() {
+      const script = document.createElement('script');
+      script.src = (process.env.HOT) ? 'http://localhost:3000/dist/bundle.js' : '../dist/bundle.js';
+      document.write(script.outerHTML);
+    }());
+    </script>
+  </body>
+</html>

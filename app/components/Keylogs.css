@@ -1,0 +1,40 @@
+.keylogsTab {
+  display: block;
+  position: absolute;
+  top: 15%;
+  right: 2%;
+  width: 40%;
+  font-size: 0.9em;
+  text-align: right;
+  padding: 0.5rem;
+}
+
+.keylogsTab li {
+  position: relative;
+  margin: 0.5 rem;
+  line-height: 1.5rem;
+}
+
+.keylogsTab li:hover {
+  background-color: rgba(64,64,64,.8);
+  cursor: pointer;
+}
+
+.id {
+  position: relative;
+  width: 7rem;
+  margin-right: 0.3rem;
+  color: #1cd731;
+}
+
+.msg {
+  position: relative;
+  position: relative;
+  color: #930004;
+}
+
+.type {
+  position: relative;
+  margin-left: 0.3rem;
+  color: #1cd731;
+}
